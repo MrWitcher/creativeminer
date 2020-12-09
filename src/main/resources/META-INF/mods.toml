@@ -1,0 +1,60 @@
+modLoader="javafml" #mandatory
+
+loaderVersion="[35,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
+
+license="All rights reserved"
+
+issueTrackerURL="http://my.issue.tracker/" #optional
+
+[[mods]] #mandatory
+
+# The modid of the mod
+modId="creativeminer" #mandatory
+
+version="1.0" #mandatory
+
+ # A display name for the mod
+displayName="CreativeMiner Mod" #mandatory
+
+# A URL to query for updates for this mod. See the JSON update specification <here>
+updateJSONURL="http://myurl.me/" #optional
+
+# A URL for the "homepage" for this mod, displayed in the mod UI
+displayURL="http://example.com/" #optional
+
+# A file name (in the root of the mod JAR) containing a logo for display
+logoFile="examplemod.png" #optional
+
+# A text field displayed in the mod UI
+credits="Noxiouse lonly " #optional
+
+# A text field displayed in the mod UI
+authors="Noxiouse" #optional
+
+# The description text for the mod (multi line!) (#mandatory)
+description='''
+Creative Miner and many other blocks / items
+'''
+
+# A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
+[[dependencies.creativeminer]] #optional
+    # the modid of the dependency
+    modId="forge" #mandatory
+    # Does this dependency have to exist - if not, ordering below must be specified
+    mandatory=true #mandatory
+    # The version range of the dependency
+    versionRange="[35,)" #mandatory
+    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
+    ordering="NONE"
+    # Side this dependency is applied on - BOTH, CLIENT or SERVER
+    side="BOTH"
+
+# Here's another dependency
+[[dependencies.creativeminer]]
+    modId="minecraft"
+    mandatory=true
+
+# This version range declares a minimum of the current minecraft version up to but not including the next major version
+    versionRange="[1.16.4,1.17)"
+    ordering="NONE"
+    side="BOTH"

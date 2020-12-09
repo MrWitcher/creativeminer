@@ -1,0 +1,8 @@
+{
+    "item.creativeminer.wrench_item" : "CM Wrench",
+    "item.creativeminer.ruby_item" : "Ruby",
+
+    "block.creativeminer.rubyore_block" : "Ruby Ore",
+
+    "itemGroup.creativeminertab" : "CreativeMiner"
+}

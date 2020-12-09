@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "creativeminer:example_item",
+    "creativeminer:test_item"
+  ]
+}
