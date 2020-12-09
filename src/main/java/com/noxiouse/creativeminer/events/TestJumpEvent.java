@@ -44,11 +44,11 @@ public class TestJumpEvent {
     public static void detectOre(LivingEvent.LivingUpdateEvent event){
         LivingEntity livingEvent = event.getEntityLiving();
         World world = livingEvent.getEntityWorld();
+        //Vector3d start = new Vector3d(livingEvent.getPosX(), livingEvent.getPosYEye(), livingEvent.getPosZ());
+        Vector3d start = livingEvent.getEntity().getPositionVec().add(0,livingEvent.getEyeHeight(),0);
+        Vector3d end = new Vector3d(livingEvent.getEntity().getLookVec().getX(),livingEvent.getEntity().getLookVec().getY(),livingEvent.getEntity().getLookVec().getZ());
+        BlockState detect = world.getBlockState(world.rayTraceBlocks(new RayTraceContext(start,start.add(end), RayTraceContext.BlockMode.OUTLINE, RayTraceContext.FluidMode.NONE,livingEvent.getEntity())).getPos());
 
-        //BlockState detect = world.getBlockState(livingEvent.getPosition().add(1,0,0));
-        Vector3d start = new Vector3d(livingEvent.getPosX(), livingEvent.getPosY(), livingEvent.getPosZ());
-        Vector3d end = new Vector3d(livingEvent.getLookVec().scale(1).x,livingEvent.getLookVec().scale(0).y,livingEvent.getLookVec().scale(1).z);
-        BlockState detect = world.getBlockState(world.rayTraceBlocks(new RayTraceContext(start,start.add(end), RayTraceContext.BlockMode.COLLIDER, RayTraceContext.FluidMode.NONE,livingEvent.getEntity())).getPos());
         if(detect.getBlock().matchesBlock(Blocks.IRON_ORE)){
             world.destroyBlock(world.rayTraceBlocks(new RayTraceContext(start,start.add(end), RayTraceContext.BlockMode.VISUAL, RayTraceContext.FluidMode.NONE,livingEvent.getEntity())).getPos(),true);
             CreativeMiner.LOGGER.info("iron" + detect);
