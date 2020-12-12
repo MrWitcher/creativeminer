@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "creativeminer:example_block",
+    "creativeminer:rubyore_block",
     "minecraft:cactus"
   ]
 }

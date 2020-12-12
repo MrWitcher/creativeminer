@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "creativeminer:example_item",
-    "creativeminer:test_item"
+    "creativeminer:ruby_item",
+    "creativeminer:wrench_item"
   ]
 }
